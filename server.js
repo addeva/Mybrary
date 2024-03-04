@@ -6,6 +6,7 @@ if (process.env.NODE_ENV !== "production") {
 // import modules
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
+const bodyParser = require("body-parser");
 
 // declare accesses to module properties and methods
 const app = express();
@@ -16,6 +17,7 @@ app.set("views", __dirname + "/views");
 app.set("layout", "layouts/layout");
 app.use(expressLayouts);
 app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ limit: "10mb", extended: false }));
 
 // connect to mongoDB
 const mongoose = require("mongoose");
