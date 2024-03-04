@@ -26,9 +26,11 @@ db.once("open", () => console.log("Connected to mongoose."));
 
 // declare routers
 const indexRouter = require("./routes/index");
+const authorRouter = require("./routes/authors");
 
 // user routers
 app.use("/", indexRouter);
+app.use("/authors", authorRouter);
 
 // listen for request to a certain port
 app.listen(process.env.PORT || 3000);
