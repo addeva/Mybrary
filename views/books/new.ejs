@@ -1,0 +1,7 @@
+<h3>New Book</h3>
+<form action="/books" method="POST" enctype="multipart/form-data">
+    <%- include('_form_fields') %><br>
+    <button><a href="/books">Cancel</a></button>
+    <input type="submit" value="Submit">
+</form>
+<%- include('../partials/errorMessage.ejs') %>
