@@ -26,7 +26,7 @@ router.post("/", async (req, res) => {
 
   try {
     const newAuthor = await author.save();
-    res.redirect("authors");
+    res.redirect(`authors/${newAuthor.id}`);
   } catch {
     res.render("authors/new", {
       author: author,
@@ -38,6 +38,53 @@ router.post("/", async (req, res) => {
 // new author router
 router.get("/new", (req, res) => {
   res.render("authors/new", { author: new Author() });
+});
+
+// each author's router
+router.get("/:id", (req, res) => {
+  res.send(`Author ${req.params.id}`);
+});
+
+router.get("/:id/edit", async (req, res) => {
+  try {
+    const author = await Author.findById(req.params.id);
+    res.render("authors/edit", { author: author });
+  } catch {
+    res.redirect("authors");
+  }
+});
+
+router.put("/:id", async (req, res) => {
+  try {
+    const author = await Author.findById(req.params.id);
+    author.name = req.body.name;
+    await author.save();
+    res.redirect(`/authors/${author.id}`);
+  } catch {
+    if (author == null) {
+      res.redirect("/");
+    } else {
+      res.render("authors/edit", {
+        author: author,
+        errorMessage: "Error updating author",
+      });
+    }
+  }
+});
+
+router.delete("/:id", async (req, res) => {
+  let author;
+  try {
+    author = await Author.findById(req.params.id);
+    await author.remove();
+    res.redirect("/authors");
+  } catch {
+    if (author == null) {
+      res.redirect("/");
+    } else {
+      res.redirect(`/authors/${author.id}`);
+    }
+  }
 });
 
 module.exports = router;

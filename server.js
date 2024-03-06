@@ -7,6 +7,7 @@ if (process.env.NODE_ENV !== "production") {
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const bodyParser = require("body-parser");
+const methodOverride = require("method-override");
 
 // declare accesses to module properties and methods
 const app = express();
@@ -18,6 +19,7 @@ app.set("layout", "layouts/layout");
 app.use(expressLayouts);
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ limit: "10mb", extended: false }));
+app.use(methodOverride("_method"));
 
 // connect to mongoDB
 const mongoose = require("mongoose");
