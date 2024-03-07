@@ -1,6 +1,9 @@
-<h1><%= book.title %></h1>
-<button><a href="/books/<%= book.id %>/edit">Edit</a></button>
-<%- include('../partials/deleteForm', {url: `/books/${book.id}`}) %>
+<h1 class="page-header"><%= book.title %></h1>
+<div class="btn-row">
+    <button class="btn btn-primary"><a href="/books/<%= book.id %>/edit">Edit</a></button>
+    <%- include('../partials/deleteForm', {url: `/books/${book.id}`}) %>
+</div>
+
 
 <img height="150" src="<%= book.coverImagePath %>">
 

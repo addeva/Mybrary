@@ -1,7 +1,7 @@
-<h3>New Book</h3>
+<h3 class="page-header">New Book</h3>
 <form action="/books" method="POST">
     <%- include('_form_fields_new') %><br>
-    <button><a href="/books">Cancel</a></button>
-    <input type="submit" value="Submit">
+    <button class="btn btn-primary"><a href="/books">Cancel</a></button>
+    <input class="btn btn-primary" type="submit" value="Submit">
 </form>
 <%- include('../partials/errorMessage.ejs') %>
