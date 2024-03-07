@@ -7,7 +7,7 @@
     <select id="author" name="author" required>
         <option value="">--Choose an author--</option>
         <% authors.forEach(author => { %>
-            <% if (author.id === book.author) { %>
+            <% if (author._id.toString() === book.author.toString()) { %>
                 <option selected label="<%= author.name %>" value="<%= author.id %>">
             <% } else { %>
                 <option label="<%= author.name %>" value="<%= author.id %>">
