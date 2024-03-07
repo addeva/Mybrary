@@ -64,7 +64,7 @@ router.get("/:id", async (req, res) => {
 
 // go to the edit page of a book's profile
 router.get("/:id/edit", async (req, res) => {
-  const book = await Book.findById(req.params.id);
+  const book = await Book.findById(req.params.id).populate("author").exec();
   renderFormPage(res, book, "edit");
 });
 
