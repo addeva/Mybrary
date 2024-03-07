@@ -5,8 +5,10 @@
 </div>
 
 <% if (books.length > 0){ %>
-    <h3>Books by <%= author.name %></h3>
-    <% books.forEach(book => { %>
-        <a href="/books/<%= book.id %>"><img height="150" src="<%= book.coverImagePath %>" ></a>
-    <% }) %>
+    <div class="cover-row">
+        <h3>Books by <%= author.name %></h3>
+        <% books.forEach(book => { %>
+            <a href="/books/<%= book.id %>"><img height="150" src="<%= book.coverImagePath %>" ></a>
+        <% }) %>
+    </div>
 <% } %>

@@ -37,6 +37,11 @@ label {
     font-weight: 400;
 }
 
+.cover-row {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 div.filepond--root{
     width: 6rem;
     height: 9rem;    

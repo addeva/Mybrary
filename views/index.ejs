@@ -1,5 +1,5 @@
 <h3 class="page-header">Recently Added</h3>
-<div>
+<div class="cover-row">
     <% books.forEach(book => { %>
         <a href="/books/<%= book.id %>"><img height="150" src="<%= book.coverImagePath %>" ></a>
     <% }) %>
