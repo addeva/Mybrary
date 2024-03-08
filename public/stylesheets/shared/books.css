@@ -1,0 +1,69 @@
+:root {
+    --book-cover-width: 150px;
+    --book-cover-width-large: 225px;
+    --book-cover-aspect-ratio: 0.6667;
+    --book-info-key-font-size: 1rem;
+    --book-info-key-font-weight: 700;
+    --book-info-value-font-size: 1rem;
+    --book-info-value-font-weight: normal;
+}
+
+.book-grid {
+    display: grid;
+    justify-content: center;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, var(--book-cover-width));
+}
+
+.book-grid-large {
+    grid-template-columns: repeat(auto-fill, var(--book-cover-width-large));        
+}
+
+.book-cover {
+    width: var(--book-cover-width);
+    height: calc(var(--book-cover-width) / var(--book-cover-aspect-ratio) );
+}
+
+.book-cover-large {
+    --book-cover-width: var(--book-cover-width-large);
+}
+
+.book-info {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.book-info-btn-flex {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    margin-top: .5rem;
+    gap: .4rem;
+}
+
+.book-info-btn-flex > * {
+    flex: 1;
+}
+
+.book-info-texts {
+    display: grid;
+    align-content: flex-start;
+    align-items: center;
+    grid-gap: 1rem;
+    grid-template-columns: auto auto;
+}
+
+.book-info-key {
+    font-size: var(--book-info-key-font-size);
+    font-weight: var(--book-info-key-font-weight);
+}
+
+.book-info-value {
+    font-size: var(--book-info-value-font-size);
+    font-weight: var(--book-info-value-font-weight);
+}
+
+
+
+
