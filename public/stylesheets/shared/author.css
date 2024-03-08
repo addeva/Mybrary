@@ -1,0 +1,15 @@
+:root {
+    --author-name-font-size: 1.2rem;
+    --author-name-font-weight: bold;
+}
+
+.author-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.author-name {
+    font-size: var(--author-name-font-size);
+    font-weight: var(--author-name-font-weight);
+}

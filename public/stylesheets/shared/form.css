@@ -1,0 +1,92 @@
+:root {
+    --form-label-font-size: 1rem;
+    --form-label-font-weight: 700;
+    --form-input-font-size: 1rem;
+    --form-input-border-color: #cbd9ed;
+    --form-input-border-color-focus: #b2c8e5;
+    --form-input-bgcolor: white;
+    --form-selected-option-txtcolor: white;
+    --form-selected-option-bgcolor: var(--txtcolor-dark);
+    --filepond-bgcolor: #e3ebf5;
+}
+
+.form-row {
+    display: flex;
+    margin-bottom: .45rem;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.5rem;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.form-item:first-child {
+    margin-left: 0;
+}
+
+.form-item label {
+    font-size: var(--form-label-font-size);
+    font-weight: var(--form-label-font-weight);
+    margin-bottom: .2rem;
+    margin-top: .3rem;
+}
+
+.form-item input, .form-item select, .form-item textarea {
+    margin-bottom: .1rem;
+}
+
+.form-item input, .form-item select, .form-item textarea {
+    border: 2px solid var(--form-input-border-color);
+    border-radius: .2rem;
+    height: 2rem;
+    padding: .25rem .5rem;
+    background-color: var(--form-input-bgcolor);
+    font-size: var(--form-input-font-size);
+    color: var(--txtcolor-dark);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    outline: none;
+}
+
+.form-item-no-grow {
+    flex-grow: 0;
+}
+
+.form-row-end {
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.form-item textarea {
+    resize: none;
+    height: 100%;
+    margin-bottom: 0;
+}
+
+.form-item select option:checked {
+    color: var(--form-selected-option-txtcolor);
+    background-color: var(--form-selected-option-bgcolor);
+  }
+
+.form-item input:focus, .form-item select:focus, .form-item textarea:focus {
+    border-color: var(--form-input-border-color-focus);
+}
+
+.filepond--root {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 0;
+}
+
+.filepond--panel-root {
+    background-color: var(--filepond-bgcolor);
+    border: none var(--form-input-border-color);
+    border-radius: .2rem;
+}
+
+.filepond--drop-label {
+    color: var(--txtcolor-medium);
+    font-size: .2rem;
+    font-weight: 100;
+}
