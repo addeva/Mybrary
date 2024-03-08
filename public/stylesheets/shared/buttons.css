@@ -3,10 +3,10 @@
     --bgcolor-btn-primary: #5AC9A1;
     --txtcolor-btn-primary-lighter: white;
     --bgcolor-btn-primary-lighter: #79D9B7;
-    --txtcolor-btn-danger: #F67180;
-    --bgcolor-btn-danger: #FDC8A8;
+    --txtcolor-btn-danger: white;
+    --bgcolor-btn-danger: #ff9999;
     --txtcolor-btn-danger-darker: white;
-    --bgcolor-btn-danger-darker: #F9645E;
+    --bgcolor-btn-danger-darker: #ff8383;
 }
 
 .btn-row {
